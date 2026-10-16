@@ -39,7 +39,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable fun App() {
-    val st = remember { Store(LocalContext.current) }
+    val ctxApp = LocalContext.current
+    val st = remember { Store(ctxApp) }
     var tab by remember { mutableIntStateOf(0) }
     val names = listOf("Boost", "Games", "Tools"); val icons = listOf("⚡", "🎮", "🛠")
     Scaffold(containerColor = Color.Transparent, bottomBar = {
